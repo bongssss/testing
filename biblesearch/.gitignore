@@ -1,0 +1,5 @@
+apps.py
+tests.py
+__pycache__/
+__init__.py
+migrations/

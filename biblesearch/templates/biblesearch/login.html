@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Project</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+   {% block navigation %}
+   <header class="bg-dark text-white py-3 d-flex justify-content-between align-items-center">
+      <div class="container d-flex align-items-center">
+        <div class="bg-grey p-2 rounded mr-2">
+            <img src="{% static 'images/bible_iconn.png' %}" alt="Bible Icon" style="height: 30px;">
+          </div>
+        <h1 class="mb-0">BibleSearch</h1>
+      </div>
+      <div class="form-inline my-2 my-lg-0">
+         <div class="form-inline my-2 my-lg-0" role="group">
+           
+            <a href="{% url 'signup' %}" class="btn btn-primary mt-3">Get Started</a>
+          </div>
+      </div>
+    </header>
+    {% endblock navigation %}
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Login</h2>
+        <form method='POST' id='loginform' >
+            {% csrf_token %}
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="inputEmail">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" name="inputPassword">
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {%block footer%}
+    <footer class="bg-dark text-white py-3">
+      <div class="container text-center">
+        <p>Follow us on social media:</p>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+        <p>&copy; 2024 BibleSearch</p>
+        
+      </div>
+    </footer>
+    {%endblock footer%}
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <!-- Custom JS -->
+  <script src="{%static 'js/main.js'%}"></script>
+
+</body>
+</html>
