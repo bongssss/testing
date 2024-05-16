@@ -1,5 +1,5 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 
@@ -64,7 +64,11 @@ static/
 bibleapp/
 manage.py
 .DS_Store
-
+**/migrations/
+**/admin.py
+**/apps.py
+**/tests.py
+**/__init__.py
 
 # Flask stuff:
 instance/
